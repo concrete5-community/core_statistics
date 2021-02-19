@@ -17,7 +17,6 @@ class Stats
         $this->db = Database::connection();
     }
 
-
     /**
      * Number of log entries.
      *
@@ -27,7 +26,6 @@ class Stats
     {
         return $this->db->fetchColumn("SELECT count(1) FROM Logs");
     }
-
 
     /**
      * Number of stacks, global areas included.
@@ -39,7 +37,6 @@ class Stats
     {
         return $this->db->fetchColumn("SELECT count(DISTINCT(cID)) FROM Stacks");
     }
-
 
     /**
      * Number of blocks.
@@ -63,7 +60,6 @@ class Stats
         ) as a");
     }
 
-
     /**
      * Number of pages.
      *
@@ -76,9 +72,9 @@ class Stats
     {
         $pl = new PageList();
         $pl->ignorePermissions();
+
         return (int) $pl->getTotalResults();
     }
-
 
     /**
      * List of unapproved pages.
@@ -88,6 +84,7 @@ class Stats
      * array []['cDateModified'] mysql datetime
      *
      * @return array
+     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function getUnapprovedPages()
@@ -104,7 +101,6 @@ class Stats
         where cv.cvIsApproved = 0
         ")->fetchAll();
     }
-
 
     /**
      * Number of pages in Trash.
@@ -126,7 +122,6 @@ class Stats
         return (int) $total;
     }
 
-
     /**
      * Number of pages in Drafts.
      *
@@ -143,7 +138,6 @@ class Stats
         return (int) $total;
     }
 
-
     /**
      * Number of pages per Page Type.
      *
@@ -152,11 +146,11 @@ class Stats
      * array[]['num_pages'] int
      *
      * @return array
+     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function getTotalPagesPerPageType()
     {
-
         return $this->db->executeQuery("
         select p.ptID, pt.ptName, count(p.ptID) as num_pages from 
         (
@@ -168,7 +162,6 @@ class Stats
         ")->fetchAll();
     }
 
-
     /**
      * Number of pages per Page Template.
      *
@@ -177,6 +170,7 @@ class Stats
      * array[]['num_pages'] int
      *
      * @return array
+     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function getTotalPagesPerPageTemplate()
@@ -195,7 +189,6 @@ class Stats
         ")->fetchAll();
     }
 
-
     /**
      * Pages with most Collection Versions.
      *
@@ -204,7 +197,9 @@ class Stats
      * array[]['num_versions'] int
      *
      * @param int $limit
+     *
      * @return array
+     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function getPagesWithMostVersions($limit = 5)
@@ -217,7 +212,6 @@ class Stats
         ", array('limit' => $limit), array('limit' => \PDO::PARAM_INT))->fetchAll();
     }
 
-
     /**
      * Number of users.
      *
@@ -226,9 +220,9 @@ class Stats
     public function getTotalUsers()
     {
         $pl = new UserList();
+
         return (int) $pl->getTotalResults();
     }
-
 
     /**
      * Number of files.
@@ -239,9 +233,9 @@ class Stats
     {
         $pl = new FileList();
         $pl->ignorePermissions();
+
         return (int) $pl->getTotalResults();
     }
-
 
     /**
      * Number of file sets.
@@ -255,7 +249,6 @@ class Stats
         return (int) $this->db->fetchColumn("SELECT count(1) FROM FileSets");
     }
 
-
     /**
      * Number of files per File Set.
      *
@@ -264,6 +257,7 @@ class Stats
      * array[]['num_files'] int
      *
      * @return array
+     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function getTotalFilesPerFileSet()
@@ -277,7 +271,6 @@ class Stats
         order by num_files desc, fID desc
         ")->fetchAll();
     }
-
 
     /**
      * Total size of all files.
@@ -297,11 +290,11 @@ class Stats
         ");
     }
 
-
     /**
      * Largest files based on file size.
      *
      * @param int $limit
+     *
      * @return \File[]
      */
     public function getLargestFiles($limit = 10)
@@ -309,9 +302,9 @@ class Stats
         $fl = new FileList();
         $fl->sortBy('fvSize', 'desc');
         $fl->getQueryObject()->setMaxResults($limit);
+
         return $fl->getResults();
     }
-
 
     /**
      * Most downloaded files.
@@ -320,7 +313,9 @@ class Stats
      * array[]['num_downloads'] int
      *
      * @param int $limit
+     *
      * @return array
+     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function getMostDownloadedFiles($limit = 10)
@@ -334,7 +329,6 @@ class Stats
         ", array('limit' => $limit), array('limit' => \PDO::PARAM_INT))->fetchAll();
     }
 
-
     /**
      * Number of active users.
      *
@@ -344,7 +338,6 @@ class Stats
     {
         return (int) $this->db->fetchColumn("select count(1) from Users where uIsActive = 1");
     }
-
 
     /**
      * Number of inactive users.
@@ -356,7 +349,6 @@ class Stats
         return (int) $this->db->fetchColumn("select count(1) from Users where uIsActive = 0");
     }
 
-
     /**
      * Number of validated users.
      *
@@ -367,16 +359,15 @@ class Stats
         return (int) $this->db->fetchColumn("select count(1) from Users where uIsValidated = 1");
     }
 
-
     /**
      * Number of not validated users.
+     *
      * @return int
      */
     public function getTotalNotValidatedUsers()
     {
         return (int) $this->db->fetchColumn("select count(1) from Users where uIsValidated = 0");
     }
-
 
     /**
      * Number of users per group.
@@ -386,6 +377,7 @@ class Stats
      * array[]['num_users'] int
      *
      * @return array
+     *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function getTotalUsersPerGroup()
@@ -401,5 +393,37 @@ class Stats
         group by tmp.gID, tmp.gName
         order by num_users desc, tmp.gID desc
         ")->fetchAll();
+    }
+
+    /**
+     * List of users that've been online recently.
+     *
+     * @param int $limit
+     *
+     * @return array UserInfo
+     */
+    public function getLatestActiveUsers($limit = 10)
+    {
+        $ul = new UserList();
+        $ul->sortBy('uLastOnline', 'desc');
+        $ul->getQueryObject()->setMaxResults($limit);
+
+        return $ul->getResults();
+    }
+
+    /**
+     * List of users who've logged in the most.
+     *
+     * @param int $limit
+     *
+     * @return array UserInfo
+     */
+    public function getMostLoggedInUsers($limit = 10)
+    {
+        $ul = new UserList();
+        $ul->sortBy('uNumLogins', 'desc');
+        $ul->getQueryObject()->setMaxResults($limit);
+
+        return $ul->getResults();
     }
 }

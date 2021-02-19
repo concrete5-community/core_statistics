@@ -104,6 +104,8 @@ class CoreStatistics extends DashboardPageController
         $this->set('users_validated', $this->stats->getTotalValidatedUsers());
         $this->set('users_not_validated', $this->stats->getTotalNotValidatedUsers());
         $this->set('groups', $this->stats->getTotalUsersPerGroup());
+        $this->set('latest_active_users', $this->stats->getLatestActiveUsers());
+        $this->set('most_logged_in_users', $this->stats->getMostLoggedInUsers());
 
         $this->render('dashboard/system/environment/core_statistics/users');
     }

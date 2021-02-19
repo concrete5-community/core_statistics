@@ -28,24 +28,107 @@ echo Core::make('helper/concrete/ui')->tabs($tabs, false);
             </thead>
             <tbody>
             <?php 
-            if (count($groups)) {
-                foreach ($groups as $group) {
-                    ?>
-                    <tr>
-                        <td><?php  echo $group['num_users'] ?></td>
-                        <td>
-                            <?php 
-                            echo ($group['gName']) ? $group['gName'] : t("Unknown");
-                            ?>
-                        </td>
-                    </tr>
-                    <?php 
-                }
+            foreach ($groups as $group) {
+                ?>
+                <tr>
+                    <td><?php  echo $group['num_users'] ?></td>
+                    <td>
+                        <?php 
+                        echo ($group['gName']) ? $group['gName'] : t("Unknown");
+                        ?>
+                    </td>
+                </tr>
+                <?php 
             }
             ?>
             <tr><td>1</td><td><?php  echo t("Super User") ?></td></tr>
             </tbody>
         </table>
+        <br />
+        <?php 
+    }
+    ?>
+
+    <?php 
+    if (count($latest_active_users)) {
+        ?>
+        <h3><?php  echo t("Latest active users") ?></h3>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <th style="width: 180px"><?php  echo t("When") ?></th>
+                <th><a href="<?php  echo URL::to('/dashboard/users/search') ?>"><?php  echo t("User") ?></a></th>
+            </thead>
+            <tbody>
+            <?php 
+            foreach ($latest_active_users as $ui) {
+                ?>
+                <tr>
+                    <td>
+                        <?php 
+                        $date = $ui->getLastOnline();
+                        if ($date) {
+                            echo Core::make('date')->formatPrettyDateTime($date);
+                        } else {
+                            echo '-';
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?php 
+                        if (Config::get('concrete.user.registration.email_registration')) {
+                            echo $ui->getUserEmail();
+                        } else {
+                            echo $ui->getUserName();
+                        }
+                        ?>
+                    </td>
+                </tr>
+                <?php 
+            }
+            ?>
+            </tbody>
+        </table>
+        <br />
+        <?php 
+    }
+    ?>
+
+
+    <?php 
+    if (count($most_logged_in_users)) {
+        ?>
+        <h3><?php  echo t("Most logged in users") ?></h3>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <th style="width: 180px"><?php  echo t("Times") ?></th>
+                <th><a href="<?php  echo URL::to('/dashboard/users/search') ?>"><?php  echo t("User") ?></a></th>
+            </thead>
+            <tbody>
+            <?php 
+            foreach ($most_logged_in_users as $ui) {
+                ?>
+                <tr>
+                    <td>
+                        <?php 
+                        echo $ui->getNumLogins();
+                        ?>
+                    </td>
+                    <td>
+                        <?php 
+                        if (Config::get('concrete.user.registration.email_registration')) {
+                            echo $ui->getUserEmail();
+                        } else {
+                            echo $ui->getUserName();
+                        }
+                        ?>
+                    </td>
+                </tr>
+                <?php 
+            }
+            ?>
+            </tbody>
+        </table>
+        <br />
         <?php 
     }
     ?>
