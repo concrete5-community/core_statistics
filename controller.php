@@ -9,7 +9,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'core_statistics';
     protected $appVersionRequired = '5.7.1';
-    protected $pkgVersion = '0.9.2';
+    protected $pkgVersion = '0.9.3';
 
     protected $single_pages = array(
         '/dashboard/system/environment/core_statistics' => array(

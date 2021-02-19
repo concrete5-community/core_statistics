@@ -8,58 +8,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2016-04-11T10:56:11+00:00\n"
-"PO-Revision-Date: 2016-04-11 12:57+0200\n"
-"Language: nl_NL\n"
+"PO-Revision-Date: 2016-04-11T10:56:11+00:00\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.6\n"
 
 #: packages/core_statistics/controller.php:22
 msgid "Core Statistics"
-msgstr "Core Statistics"
+msgstr ""
 
 #: packages/core_statistics/controller.php:27
 msgid "Statistics about your concrete5 installation."
-msgstr "Statistieken over uw concrete5 installatie."
+msgstr ""
 
 #: packages/core_statistics/controllers/single_page/dashboard/system/environment/core_statistics.php:19
 msgid "Overview"
-msgstr "Overzicht"
+msgstr ""
 
 #: packages/core_statistics/controllers/single_page/dashboard/system/environment/core_statistics.php:20
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:26
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:58
 msgid "Pages"
-msgstr "Pagina's"
+msgstr ""
 
 #: packages/core_statistics/controllers/single_page/dashboard/system/environment/core_statistics.php:21
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:26
 msgid "Users"
-msgstr "Gebruikers"
+msgstr ""
 
 #: packages/core_statistics/controllers/single_page/dashboard/system/environment/core_statistics.php:22
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:26
 msgid "Files"
-msgstr "Bestanden"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:12
 msgid "Total files:"
-msgstr "Totaal bestanden:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:13
 msgid "Total file size:"
-msgstr "Totale bestandsgrootte:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:14
 msgid "Total file sets:"
-msgstr "Totaal bestandsverzamelingen:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:23
 msgid "Files per File Set"
-msgstr "Bestanden per bestandsverzameling"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:27
 msgid "File Set"
-msgstr "Bestandsverzameling"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:40
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:74
@@ -70,142 +69,142 @@ msgstr "Bestandsverzameling"
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:143
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:38
 msgid "Unknown"
-msgstr "Onbekend"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:59
 msgid "Top %d downloaded files"
-msgstr "Top %d meest gedownloade bestanden"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:62
 msgid "Downloaded"
-msgstr "Gedownload"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:63
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:97
 msgid "File Name"
-msgstr "Bestandsnaam"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:93
 msgid "Top %d largest files"
-msgstr "Top %d grootste bestanden"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/files.php:96
 msgid "File Size"
-msgstr "Bestandsgrootte"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/overview.php:9
 msgid "Pages:"
-msgstr "Pagina’s:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/overview.php:10
 msgid "Users:"
-msgstr "Gebruikers:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/overview.php:11
 msgid "Files:"
-msgstr "Bestanden:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/overview.php:12
 msgid "File sets:"
-msgstr "Bestandsverzamelingen:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/overview.php:13
 msgid "Stacks:"
-msgstr "Stapels:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/overview.php:14
 msgid "Blocks:"
-msgstr "Blokken:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/overview.php:15
 msgid "Log entries:"
-msgstr "Logs:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:10
 msgid "Total pages:"
-msgstr "Totaal pagina’s:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:11
 msgid "Pages approved:"
-msgstr "Pagina’s goedgekeurd:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:12
 msgid "Pages unapproved:"
-msgstr "Pagina’s niet goedgekeurd:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:13
 msgid "Pages in trash:"
-msgstr "Pagina’s in prullenbak:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:14
 msgid "Pages in draft:"
-msgstr "Pagina’s in concept:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:23
 msgid "Page Types"
-msgstr "Paginatypen"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:27
 msgid "Page Type"
-msgstr "Paginatype"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:55
 msgid "Page Templates"
-msgstr "Paginasjablonen"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:59
 msgid "Template"
-msgstr "Sjabloon"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:90
 msgid "Unapproved pages"
-msgstr "Niet goedgekeurde pagina’s"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:93
 msgid "Date modified"
-msgstr "Bewerkdatum"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:94
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:130
 msgid "Page"
-msgstr "Pagina"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:126
 msgid "Top %d pages with most versions"
-msgstr "Top %d pagina’s met meeste versies"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/pages.php:129
 msgid "Versions"
-msgstr "Versies"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:10
 msgid "Total users:"
-msgstr "Totaal gebruikers:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:11
 msgid "Active users:"
-msgstr "Actieve gebruikers:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:12
 msgid "Inactive users:"
-msgstr "Inactieve gebruikers:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:13
 msgid "Validated users:"
-msgstr "Gevalideerde gebruikers:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:14
 msgid "Not validated users:"
-msgstr "Niet gevalideerde gebruikers:"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:23
 msgid "User Groups"
-msgstr "Gebruikersgroepen"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:27
 msgid "Group"
-msgstr "Groep"
+msgstr ""
 
 #: packages/core_statistics/single_pages/dashboard/system/environment/core_statistics/users.php:46
 msgid "Super User"
-msgstr "Super beheerder"
+msgstr ""
